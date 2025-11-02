@@ -1,0 +1,36 @@
+@import "@/styles/components/layout/Header.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Базовые стили */
+html, body, #root {
+    height: 100%;
+}
+
+.card {
+    @apply rounded-2xl shadow-lg p-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100;
+}
+
+.badge {
+    @apply px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-sm;
+}
+
+.skeleton {
+    @apply animate-pulse bg-slate-200 dark:bg-slate-700 rounded;
+}
+
+body {
+    background: linear-gradient(135deg, #FFFFFF 0%, #466173 100%);
+}
+
+.dark body {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+
+@layer base {
+    * {
+        @apply border-slate-300 dark:border-slate-700;
+    }
+}
