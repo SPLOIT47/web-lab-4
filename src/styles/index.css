@@ -4,33 +4,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Базовые стили */
+:root {
+    --bg-start: #ffffff;
+    --bg-end:   #466173;
+    --text-main: #000000;
+}
+
+.dark {
+    --bg-start: #797979;
+    --bg-end: #151515;
+    --text-main: #ffffff;
+}
+
 html, body, #root {
     height: 100%;
-}
-
-.card {
-    @apply rounded-2xl shadow-lg p-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100;
-}
-
-.badge {
-    @apply px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-sm;
-}
-
-.skeleton {
-    @apply animate-pulse bg-slate-200 dark:bg-slate-700 rounded;
-}
-
-body {
-    background: linear-gradient(135deg, #FFFFFF 0%, #466173 100%);
-}
-
-.dark body {
-    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    min-height: 100%;
 }
 
 @layer base {
     * {
         @apply border-slate-300 dark:border-slate-700;
     }
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+}
+
+.dark body {
+    background: linear-gradient(135deg, var(--bg-start) 0%,  var(--bg-end) 100%);
+}
+
+.bg-theme {
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+}
+
+.text-theme {
+    color: var(--text-main);
+}
+
+.card {
+    @apply bg-white/40 dark:bg-[#444444] backdrop-blur-md rounded-3xl
+    shadow-[10px_10px_4px_rgba(0,0,0,0.5)];
+}
+
+.badge {
+    @apply
+    px-3 py-1
+    rounded-full
+    bg-slate-200 dark:bg-slate-700
+    text-sm;
+}
+
+.skeleton {
+    @apply
+    animate-pulse
+    bg-slate-200 dark:bg-slate-700
+    rounded;
 }
